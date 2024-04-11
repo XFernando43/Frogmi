@@ -15,7 +15,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_10_194442) do
   enable_extension "plpgsql"
 
   create_table "reports", force: :cascade do |t|
-    t.string "Reportid"
     t.float "mag"
     t.string "place"
     t.string "time"
@@ -29,32 +28,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_10_194442) do
     t.string "longitude"
     t.string "float"
     t.float "latitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "seismological_reports", force: :cascade do |t|
-    t.string "Reportid"
-    t.float "mag"
-    t.string "place"
-    t.string "time"
-    t.string "Long"
-    t.string "Integer"
-    t.string "url"
-    t.integer "tsunami"
-    t.string "magType"
-    t.string "title"
-    t.string "string"
-    t.string "longitude"
-    t.string "float"
-    t.float "latitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.integer "userId"
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

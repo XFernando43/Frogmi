@@ -20,7 +20,7 @@ module Api
                 earthquakes.select! { |earthquake| mag_types.include?(earthquake['properties']['magType']) }
               end
           
-              # Aplicar paginación
+              # Aplicar paginación  ||||| Reparar no funciona 
               start_index = (page.to_i - 1) * per_page.to_i
               paginated_data = earthquakes[start_index, per_page.to_i]
           
@@ -41,4 +41,14 @@ module Api
     end
 
 end
+
+
+
+
+#Pagination
+# http://localhost:3000/api/v1/reports?page=3
+
+#filters
+# http://localhost:3000/api/v1/reports?filters[mag_type]=md,ms
+# http://localhost:3000/api/v1/reports?page=2&per_page=20
 
