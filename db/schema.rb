@@ -26,15 +26,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_11_205513) do
     t.float "mag"
     t.string "place"
     t.string "time"
-    t.string "Long"
-    t.string "Integer"
     t.string "url"
     t.integer "tsunami"
-    t.string "magType"
+    t.string "mag_type"
     t.string "title"
-    t.string "string"
-    t.string "longitude"
-    t.string "float"
+    t.float "longitude"
     t.float "latitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
