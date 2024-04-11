@@ -1,8 +1,6 @@
 require 'net/http'  
-
 module Api
     module V1
-
         class ReportsController < ApplicationController
             def index
 
@@ -23,6 +21,14 @@ module Api
               # Aplicar paginación  ||||| Reparar no funciona 
               start_index = (page.to_i - 1) * per_page.to_i
               paginated_data = earthquakes[start_index, per_page.to_i]
+
+
+              #data saving
+              #data.each do |feature|
+              #Report.create!(
+              #mag_type: feature['properties']['magType'],
+              ## Otros atributos que deseas guardar en tu modelo Report
+              #)
           
               render json: {
                 status: 'exitoso',
@@ -34,12 +40,10 @@ module Api
                   total: earthquakes.length
                 }
               }, status: :ok
+            
             end
-          end
-          
-          
+        end
     end
-
 end
 
 
