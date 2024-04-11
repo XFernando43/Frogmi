@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  Reportid: MyString
+  # Reportid: MyString
   mag: 1.5
   place: MyString
   time: MyString
@@ -17,7 +17,7 @@ one:
   latitude: 1.5
 
 two:
-  Reportid: MyString
+  # Reportid: MyString
   mag: 1.5
   place: MyString
   time: MyString
