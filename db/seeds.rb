@@ -36,3 +36,4 @@ Report.create(
   longitude: -74.0059,
   latitude: 40.7128
 )
+
