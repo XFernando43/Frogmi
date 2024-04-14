@@ -14,6 +14,8 @@ gem 'pg', '~> 1.5', '>= 1.5.4'
 
 gem 'json'
 
+gem 'will_paginate', '~> 3.3'
+
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
