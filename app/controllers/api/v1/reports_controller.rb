@@ -33,16 +33,17 @@ module Api
       end
 
       private
-
       # Set the report based on the ID parameter
       def set_report
         @report = Report.find(params[:id])
-      rescue ActiveRecord::RecordNotFound
-        render json: {
-          status: 'error',
-          message: 'Report not found'
-        }, status: :not_found
+        rescue ActiveRecord::RecordNotFound
+          render json: {
+            status: 'error',
+            message: 'Report not found'
+          }, status: :not_found
       end
+
+      
     end
   end
 end
