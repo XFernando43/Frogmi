@@ -23,6 +23,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_11_205513) do
   end
 
   create_table "reports", force: :cascade do |t|
+    t.string 'identifier'
     t.float "mag"
     t.string "place"
     t.string "time"
