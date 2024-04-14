@@ -24,33 +24,29 @@ module Api
       end
 
       # create comentario
-        def create
-          report_id = params[:report_id]
-          
-          body = params[:comment] # Aquí obtenemos directamente el valor del cuerpo del comentario
-          
-          comment = Comment.new(body: body, report_id: report_id)
-          
-          if comment.save
-            render json: {
-              status: 'success',
-              message: 'Comentario creado exitosamente',
-              data: comment
-            }, status: :created
-          else
-            render json: {
-              status: 'error',
-              message: 'No se pudo crear el comentario',
-              errors: comment.errors
-            }, status: :unprocessable_entity
-          end
+      def create
+        report_id = params[:report_id]
+        body = params[:comment] # Aquí obtenemos directamente el valor del cuerpo del comentario
+        comment = Comment.new(body: body, report_id: report_id)
+        
+        if comment.save
+          render json: {
+            status: 'success',
+            message: 'Comentario creado exitosamente',
+            data: comment
+          }, status: :created
+        else
+          render json: {
+            status: 'error',
+            message: 'No se pudo crear el comentario',
+            errors: comment.errors
+          }, status: :unprocessable_entity
         end
+      end
 
-
-      
       private
       def set_comment
-        @comment = Comment.where(report_id: params[:id])
+        @comment = Comment.where(report_id: params[:report_id])
         
         if @comment.empty?
           render json: {
@@ -58,10 +54,7 @@ module Api
             message: 'comments not found for report_id'
           }, status: :not_found
         end
-
       end
-
-
     end
   end 
 end
