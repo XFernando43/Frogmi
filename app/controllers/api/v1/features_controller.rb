@@ -1,13 +1,12 @@
 module Api
   module V1
-    class ReportsController < ApplicationController
+    class FeaturesController < ApplicationController
       before_action :set_report, only: [:show]
 
       # GET /api/v1/reports
       def index
         page = params[:page] || 1
         per_page = params[:per_page] || 10
-
         reports = Report.paginate(page: page, per_page: per_page)
 
         render json: {
